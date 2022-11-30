@@ -1,0 +1,11 @@
+[package]
+name = "rust-template"
+version = "0.1.0"
+edition = "2021"
+description = "A rust template"
+repository = "https://github.com/JasonkayZK/rust-template"
+license-file = "LICENSE"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
