@@ -1,4 +1,4 @@
-name: CI # Continuous Integration
+name: CI
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Install toolchain
         uses: actions-rs/toolchain@v1
         with:
@@ -28,7 +28,7 @@ jobs:
           override: true
           components: rustfmt, clippy
       - name: Cache
-        uses: Swatinem/rust-cache@v2
+        uses: Swatinem/rust-cache@v1
       - name: Run cargo fmt
         uses: actions-rs/cargo@v1
         with:
@@ -59,3 +59,4 @@ jobs:
           RUST_TEST_THREADS: 8
         with:
           command: test
+          args: --all-features
